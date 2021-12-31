@@ -1,10 +1,12 @@
+import java.util.HashSet;
+import java.util.Set;
 import java.util.*;
 
-public class TwoNumberSum {
+class Arrays_TwoNumberSum {
     private int[] array;
     private int targetSum;
 
-    public TwoNumberSum(int[] array, int targetSum){
+    public Arrays_TwoNumberSum(int[] array, int targetSum){
         this.array = array;
         this.targetSum = targetSum;
     }
@@ -19,5 +21,6 @@ public class TwoNumberSum {
 
         return new int[0];
     }
-
 }
+
+

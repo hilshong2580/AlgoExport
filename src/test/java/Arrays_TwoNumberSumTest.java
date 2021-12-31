@@ -4,15 +4,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TwoNumberSumTest {
-    private TwoNumberSum twoNumberSum;
-
-
+class Arrays_TwoNumberSumTest {
+    private Arrays_TwoNumberSum twoNumberSum;
     @BeforeEach
     void setUp() {
         int[] array = {3, 5, -4, 8, 11, 1, -1, 6};
         int targetSum = 10;
-        twoNumberSum = new TwoNumberSum(array, targetSum);
+        twoNumberSum = new Arrays_TwoNumberSum(array, targetSum);
     }
 
     @AfterEach
@@ -21,7 +19,7 @@ class TwoNumberSumTest {
     }
 
     @Test
-    public void TestCase1() {
+    void solutionOne() {
         int[] output = this.twoNumberSum.solutionOne();
         assertTrue(output.length == 2);
         assertTrue(contains(output, -1));
@@ -34,5 +32,4 @@ class TwoNumberSumTest {
         }
         return false;
     }
-
 }
