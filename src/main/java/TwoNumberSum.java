@@ -1,18 +1,15 @@
-package Arrays;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class TwoNumberSum {
     private int[] array;
     private int targetSum;
+
     public TwoNumberSum(int[] array, int targetSum){
         this.array = array;
         this.targetSum = targetSum;
     }
 
-    public int[] twoNumberSum(int[] array, int targetSum) {
-
+    public int[] solutionOne(){
         Set<Integer> set = new HashSet<>();
         for (int num : array)
             if(set.contains(targetSum - num))
@@ -22,4 +19,5 @@ public class TwoNumberSum {
 
         return new int[0];
     }
+
 }
