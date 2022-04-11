@@ -13,15 +13,20 @@ and the result should be [18, 141, 541]
 
 public class Searching_FindThreeLargestNumbers {
     public static int[] findThreeLargestNumbers(int[] array) {
-        // Write your code here.
+
+        // default the minimum integer value for initial three number
         int[] largestNum = { Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE };
+
+        // using a for loop to find the first three largest number
         for(int num : array){
+            // use a methods to compare and update the the larger number
             updateLargest(largestNum, num);
         }
         return largestNum;
     }
 
     public static void updateLargest(int[] largestNum, int num){
+        // finding the match case as the arrays integer larger than stored numbers
         if(num > largestNum[2]){
             shiftNumber(largestNum, num, 2);
         }
@@ -33,6 +38,7 @@ public class Searching_FindThreeLargestNumbers {
         }
     }
 
+    //update the number, if for loop's i equal to the index, save it. else shift the number in order.
     public static void shiftNumber(int[] largestNum, int num, int index){
         for(int i = 0; i <= index; i++){
             if(i == index){
