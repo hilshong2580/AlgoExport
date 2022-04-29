@@ -6,6 +6,10 @@ import java.util.*;
 * input string by k positions in the alphabet, where k is the key.
 *
 * Note that letters should "wrap" around the alphabet; in other words, the letter z shifted by one returns the letter a.
+*
+* Ideas:
+* As we know that the ASCII number of a is 96 and z is 122, add the ley value to the origin str char. then use % to
+* shift to correct char.
 * */
 
 public class Strings_CaesarCipherEncryptor {
@@ -21,16 +25,13 @@ public class Strings_CaesarCipherEncryptor {
             while(num > z)
                 num = ((num) % z)+a;
 
-
             System.out.println(num);
             arr[i] = (char)num;
-
 
         }
 
         String str2 = String.valueOf(arr);
         System.out.println(str2);
-
 
         return str2;
     }
