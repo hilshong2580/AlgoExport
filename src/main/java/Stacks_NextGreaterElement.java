@@ -1,5 +1,4 @@
 import java.util.*;
-
 /*
 Write a function that takes in an array of integers and returns a new array containing, at each index,
 the next element in the input array that's greater than the element at that index in the input array.
@@ -22,8 +21,38 @@ output:
 
 O(n) time and O(n) space
 
+idea:
+
+Using a new int array and fill all of that as -1.
+Create a stack to save the index from given array.
+Use a for loop to push the index into stack.
+Use a while loop to check the stack's top element compare with current element
+return the array as result.
+
+
 */
 
 
 public class Stacks_NextGreaterElement {
+
+    public int[] nextGreaterElement(int[] array) {
+
+        int[] result = new int[array.length];
+        Arrays.fill(result, -1);
+
+        Stack<Integer> stack = new Stack<>();
+
+        for(int i = 0; i < array.length * 2; i++){
+            int circularIdx = i % array.length;
+
+            while(stack.size() > 0 && array[stack.peek()] < array[circularIdx]){
+                int top = stack.pop();
+                result[top] = array[circularIdx];
+            }
+
+            stack.push(circularIdx);
+        }
+
+        return result;
+    }
 }
